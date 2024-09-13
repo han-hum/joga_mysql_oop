@@ -8,7 +8,7 @@ class articleController {
 
     async getAllArticles(req, res) {
         this.articles = await articleModel.findAll()
-        res.status(201).json({ articles: this.articles })
+        res.status(201).render('index', { articles: this.articles })
     }
 
     async getArticleBySlug(reg, res) {
