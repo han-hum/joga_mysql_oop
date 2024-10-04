@@ -11,7 +11,7 @@ class articleController {
         res.status(201).render('index', { articles: this.articles })
     }
 
-    async getArticleBySlug(reg, res) {
+    async getArticleBySlug(req, res) {
         const article = await articleModel.findOne(req.params.slug)
         res.status(201).json({ article: article })
     }
